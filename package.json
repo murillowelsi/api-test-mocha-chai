@@ -16,7 +16,7 @@
     "automação full stack",
     "node"
   ],
-  "author": "Fernando Papito",
+  "author": "Murillo Welsi",
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.5.5",
@@ -31,7 +31,7 @@
     "chai": "4.2.0",
     "chai-http": "4.3.0",
     "mocha": "6.2.0",
-    "mocha-junit-reporter": "1.23.1",
+    "mocha-junit-reporter": "^1.23.1",
     "mochawesome": "^4.1.0",
     "nodemon": "^1.19.1"
   }
