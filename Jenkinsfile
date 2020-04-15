@@ -1,14 +1,16 @@
 pipeline {
   agent {
     docker {
-      image "node:8-alpine"
+      image "node:alpine"
       args "--network=skynet"
     }
   }
   stages {
     stage("Build") {
       steps {
-        sh "apk add --no-cache mongodb"
+        sh "echo 'http://dl-cdn.alpinelinux.org/alpine/v3.10/main' >> /etc/apk/repositories"
+        sh "echo 'http://dl-cdn.alpinelinux.org/alpine/v3.10/community' >> /etc/apk/repositories"
+        sh "apk upgrade --update && apk add --no-cache mongodb"
         sh "chmod +x ./scripts/dropdb.sh"
         sh "npm install"
       }
